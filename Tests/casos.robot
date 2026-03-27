@@ -13,7 +13,9 @@ ${locked_user}    locked_out_user
 *** Test Cases ***
 #Caso de prueba hecho en clase
 TC_000_Login_con_Credenciales_Validas
-    Open Browser    ${None}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Go To           ${URL}
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
@@ -23,7 +25,9 @@ TC_000_Login_con_Credenciales_Validas
 
 #10 Casos de prueba de tarea
 TC_001_Login_con_Credenciales_Invalidas
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${wrong_username}
     Input Password  id=password     ${wrong_password}
     Click Button    id=login-button
@@ -31,7 +35,9 @@ TC_001_Login_con_Credenciales_Invalidas
     [Teardown]    Close Browser
 
 TC_002_Login_Usuario_Bloqueado
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${locked_user}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -39,7 +45,9 @@ TC_002_Login_Usuario_Bloqueado
     [Teardown]    Close Browser
 
 TC_003_Agregar_Producto_Al_Carrito
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -49,7 +57,9 @@ TC_003_Agregar_Producto_Al_Carrito
     [Teardown]    Close Browser
 
 TC_004_Ordenar_Productos_Precio_Bajo_A_Alto_
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -59,7 +69,9 @@ TC_004_Ordenar_Productos_Precio_Bajo_A_Alto_
     [Teardown]    Close Browser
 
 TC_005_Eliminar_Producto_Del_Carrito
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -70,7 +82,9 @@ TC_005_Eliminar_Producto_Del_Carrito
     [Teardown]    Close Browser
 
 TC_006_Ver_Detalle_De_Producto
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -80,7 +94,9 @@ TC_006_Ver_Detalle_De_Producto
     [Teardown]    Close Browser
 
 TC_007_Checkout_Flujo_Completo
+    Set Selenium Speed      0.2s
     Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -97,7 +113,9 @@ TC_007_Checkout_Flujo_Completo
 
 
 TC_008_Logout_Exitoso
+    Set Selenium Speed      0.2s
     Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
@@ -108,19 +126,25 @@ TC_008_Logout_Exitoso
     [Teardown]    Close Browser
 
 TC_009_Resetear_Estado_App
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button
     Click Button    id=add-to-cart-sauce-labs-backpack
+    Element Should Be Visible    css=.shopping_cart_badge
     Click Button    id=react-burger-menu-btn
-    Wait Until Element Is Visible    id=reset_sidebar_link    5s
-    Click Link      id=reset_sidebar_link
-    Page Should Not Contain Element    css=.shopping_cart_badge
+    Wait Until Element Is Visible    id=reset_sidebar_link    10s
+    Click Element    id=reset_sidebar_link
+    Click Link    class=shopping_cart_link
+    Page Should Not Contain Element    css=.cart_item
     [Teardown]    Close Browser
 
 TC_010_Error_Checkout_Informacion_Vacia
-    Open Browser    ${URL}    ${browser}
+    Set Selenium Speed      0.2s
+    Open Browser    ${URL}    ${browser}    options=add_argument("--incognito"); add_argument("--disable-notifications")
+    Maximize Browser Window
     Input Text      id=user-name    ${username}
     Input Password  id=password     ${password}
     Click Button    id=login-button

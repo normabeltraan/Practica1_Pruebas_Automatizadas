@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-26T18:29:59.593307" rpa="false" schemaversion="5">
+<suite id="s1" name="Casos" source="C:\Users\norma\OneDrive\Escritorio\Documentos\GitHub\Practica1_252102_252770\Tests\casos.robot">
+<test id="s1-t1" name="TC_009_Resetear_Estado_App" line="110">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:00.177292" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-26T18:30:00.176610" elapsed="2.286568"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-26T18:30:02.463823" elapsed="0.049587"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:02.515247" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:02.513923" elapsed="0.325745"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:02.841485" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-03-26T18:30:02.930213" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:02.840463" elapsed="0.213575"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:03.055275" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.054581" elapsed="0.187955"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:03.243407" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<arg>id=add-to-cart-sauce-labs-backpack</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.242912" elapsed="0.194308"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:03.481427" level="INFO">Element 'css=.shopping_cart_badge' is displayed.</msg>
+<arg>css=.shopping_cart_badge</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.438030" elapsed="0.043800"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:03.482967" level="INFO">Clicking button 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.482219" elapsed="0.115402"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=reset_sidebar_link</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.598170" elapsed="0.247607"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:03.846617" level="INFO">Clicking element 'id=reset_sidebar_link'.</msg>
+<arg>id=reset_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.846154" elapsed="0.077600"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:03.924628" level="INFO">Clicking link 'class=shopping_cart_link'.</msg>
+<arg>class=shopping_cart_link</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T18:30:03.924140" elapsed="0.104315"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T18:30:04.041145" level="INFO">Current page does not contain element 'css=.cart_item'.</msg>
+<arg>css=.cart_item</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-03-26T18:30:04.028795" elapsed="0.012604"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-26T18:30:04.041846" elapsed="2.345485"/>
+</kw>
+<status status="PASS" start="2026-03-26T18:30:00.174700" elapsed="6.212978"/>
+</test>
+<status status="PASS" start="2026-03-26T18:29:59.627722" elapsed="6.761043"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Casos" id="s1" pass="1" fail="0" skip="0">Casos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
